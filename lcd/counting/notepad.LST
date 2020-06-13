@@ -1,0 +1,143 @@
+C51 COMPILER V9.05   NOTEPAD                                                               07/19/2016 03:34:39 PAGE 1   
+
+
+C51 COMPILER V9.05, COMPILATION OF MODULE NOTEPAD
+OBJECT MODULE PLACED IN notepad.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE notepad.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<delay.h>
+   3          #define data P2
+   4          sbit s1=P3^0;
+   5          sbit s2=P3^1;
+   6          sbit s3=P3^2;
+   7          sbit RS=P3^5;
+   8          sbit RW=P3^6;
+   9          sbit EN=P3^7;
+  10          void lcd_cmd(unsigned char temp)
+  11          {
+  12   1      RS=0;
+  13   1      RW=0;
+  14   1      data=temp;
+  15   1      EN=1;
+  16   1      ms_delay(10);
+  17   1      EN=0;
+  18   1      }
+  19          void lcd_dat(unsigned char temp)
+  20          {
+  21   1      RS=1;
+  22   1      RW=0;
+  23   1      data=temp;
+  24   1      EN=1;
+  25   1      ms_delay(10);
+  26   1      EN=0;
+  27   1      }
+  28          void lcd_init()
+  29          {
+  30   1      lcd_cmd(0x38);
+  31   1      lcd_cmd(0x06);
+  32   1      lcd_cmd(0x0c);
+  33   1      lcd_cmd(0x01);
+  34   1      }
+  35          void lcd_puts(unsigned char *str)
+  36          {
+  37   1      while(*str!='\0')
+  38   1              {
+  39   2              lcd_dat(*str);
+  40   2              str++;
+  41   2              }
+  42   1      }
+  43          void main()
+  44          {
+  45   1      signed char i,n;
+  46   1      bit f;
+  47   1      P0=0;
+  48   1      P1=0;
+  49   1      lcd_init();
+  50   1      lcd_cmd(0x80);
+  51   1      lcd_puts("COUNTING!");
+  52   1      while(1)
+  53   1      { 
+  54   2         lcd_cmd(0xc0);
+  55   2         lcd_dat(i+48);
+C51 COMPILER V9.05   NOTEPAD                                                               07/19/2016 03:34:39 PAGE 2   
+
+  56   2         ms_delay(100);
+  57   2         if(s1==0)
+  58   2         {
+  59   3         i++;
+  60   3         while(s1==0);
+  61   3         if(i==10)
+  62   3         {
+  63   4         i=0;
+  64   4         }
+  65   3         f=1;
+  66   3         }
+  67   2         if(s2==0)
+  68   2         {
+  69   3         i--;
+  70   3         while(s2==0);
+  71   3         if(i==255)
+  72   3         {
+  73   4         i=9;
+  74   4         }
+  75   3         f=0;
+  76   3         }
+  77   2         if(s3==0)
+  78   2         {
+  79   3         if(f==1) 
+  80   3         {
+  81   4         for(n=i;n<10;n++)  
+  82   4         {
+  83   5         lcd_cmd(0xc0);
+  84   5         lcd_dat(n+48);
+  85   5         ms_delay(300);
+  86   5         }
+  87   4         for(n=0;n<=i;n++)
+  88   4              {
+  89   5              lcd_cmd(0xc0);
+  90   5              lcd_dat(n+48);
+  91   5              ms_delay(300);
+  92   5         
+  93   5              }
+  94   4         }
+  95   3         else if(f==0)
+  96   3         {
+  97   4         for(n=i;n>=0;n--)
+  98   4         {
+  99   5         lcd_cmd(0xc0);
+ 100   5         lcd_dat(n+48);
+ 101   5         ms_delay(300);
+ 102   5         }
+ 103   4      
+ 104   4         for(n=9;n>=i;n--)
+ 105   4              {
+ 106   5              lcd_cmd(0xc0);
+ 107   5              lcd_dat(n+48);
+ 108   5              ms_delay(300);
+ 109   5         
+ 110   5              }
+ 111   4         }
+ 112   3        
+ 113   3         }
+ 114   2      }
+ 115   1      }
+ 116                                                      
+
+C51 COMPILER V9.05   NOTEPAD                                                               07/19/2016 03:34:39 PAGE 3   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    345    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,270 @@
+C51 COMPILER V9.05   NOTE                                                                  08/03/2016 02:40:33 PAGE 1   
+
+
+C51 COMPILER V9.05, COMPILATION OF MODULE NOTE
+OBJECT MODULE PLACED IN note.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE note.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<delay.h>
+   3          #include<p2lcd.h>
+   4          sbit f1=P1^0;
+   5          sbit b1=P1^1;
+   6          sbit f2=P1^2;
+   7          sbit b2=P1^3;
+   8          sbit fwd=P0^0;
+   9          sbit bwd=P0^1;
+  10          sbit rt=P0^2;
+  11          sbit lt=P0^3;
+  12          #define off 1;
+  13          #define on 0;
+  14          void main()
+  15          {
+  16   1      
+  17   1      lcd_init();
+  18   1      P0=0xff;
+  19   1      /*
+  20   1      lcd_cmd(0x01);
+  21   1      secdelay(1);
+  22   1      lcd_cmd(0x80);
+  23   1      lcd_puts(" Your Welcome ! ");
+  24   1      secdelay(1);
+  25   1      lcd_cmd(0x01);
+  26   1      ms_delay(200);
+  27   1      lcd_cmd(0x80);
+  28   1      lcd_puts(" Some Important ");
+  29   1      lcd_cmd(0xc0);
+  30   1      lcd_puts(" Instruction... ");
+  31   1      secdelay(2);
+  32   1      lcd_cmd(0x01);
+  33   1      ms_delay(200);
+  34   1      lcd_cmd(0x80);
+  35   1      lcd_puts(" Hi! I'm a Robo ");
+  36   1      lcd_cmd(0xc0);
+  37   1      lcd_puts("     Car...     ");
+  38   1      secdelay(1);
+  39   1      lcd_cmd(0x01);
+  40   1      ms_delay(200);
+  41   1      lcd_cmd(0x80);
+  42   1      lcd_puts("You Have remote!");
+  43   1      lcd_cmd(0xc0);
+  44   1      lcd_puts(" In YOur Hand! ");
+  45   1      secdelay(1);
+  46   1      lcd_cmd(0x01);
+  47   1      ms_delay(200);
+  48   1      lcd_cmd(0x80);
+  49   1      lcd_puts(" as you can see ");
+  50   1      lcd_cmd(0xc0);
+  51   1      lcd_puts("there're 4 keys.");
+  52   1      ms_delay(700);
+  53   1      lcd_cmd(0x01);
+  54   1      lcd_cmd(0x80);
+  55   1      lcd_puts("  ...on remote  ");
+C51 COMPILER V9.05   NOTE                                                                  08/03/2016 02:40:33 PAGE 2   
+
+  56   1      ms_delay(700);
+  57   1      lcd_cmd(0x80);
+  58   1      lcd_puts(" That's         ");
+  59   1      ms_delay(800);
+  60   1      lcd_cmd(0x80);
+  61   1      lcd_puts(" That's A       ");
+  62   1      ms_delay(800);
+  63   1      lcd_cmd(0x80);
+  64   1      lcd_puts(" That's A,B     ");
+  65   1      ms_delay(800);
+  66   1      lcd_cmd(0x80);
+  67   1      lcd_puts(" That's A,B,C   ");
+  68   1      ms_delay(800);
+  69   1      lcd_cmd(0x80);
+  70   1      lcd_puts(" That's A,B,C,D ");
+  71   1      ms_delay(800);
+  72   1      lcd_cmd(0x01);
+  73   1      secdelay(1);
+  74   1      lcd_cmd(0x80);
+  75   1      lcd_puts(" Press 'A' for  ");
+  76   1      lcd_cmd(0xc0);
+  77   1      lcd_puts("  forward move  ");
+  78   1      ms_delay(800);
+  79   1      lcd_cmd(0x80);
+  80   1      lcd_puts(" Press 'A' for  ");
+  81   1      lcd_cmd(0xc0);
+  82   1      lcd_puts("  forward move. ");
+  83   1      ms_delay(800);
+  84   1      lcd_cmd(0x80);
+  85   1      lcd_puts(" Press 'A' for  ");
+  86   1      lcd_cmd(0xc0);
+  87   1      lcd_puts("  forward move..");
+  88   1      ms_delay(800);
+  89   1      lcd_cmd(0x01);
+  90   1      ms_delay(200);
+  91   1      lcd_cmd(0x80);
+  92   1      lcd_puts(" Press 'B' for  ");
+  93   1      lcd_cmd(0xc0);
+  94   1      lcd_puts(" Backward move. ");
+  95   1      ms_delay(800);
+  96   1      lcd_cmd(0x80);
+  97   1      lcd_puts(" Press 'B' for  ");
+  98   1      lcd_cmd(0xc0);
+  99   1      lcd_puts(" Backward move..");
+ 100   1      lcd_cmd(0x01);
+ 101   1      ms_delay(200);
+ 102   1      lcd_cmd(0x80);
+ 103   1      lcd_puts(" Press 'C' for  ");
+ 104   1      lcd_cmd(0xc0);
+ 105   1      lcd_puts("   Right move   ");
+ 106   1      ms_delay(800);
+ 107   1      lcd_cmd(0x80);
+ 108   1      lcd_puts(" Press 'C' for  ");
+ 109   1      lcd_cmd(0xc0);
+ 110   1      lcd_puts("   Right move.  ");
+ 111   1      ms_delay(800);
+ 112   1      lcd_cmd(0x80);
+ 113   1      lcd_puts(" Press 'C' for  ");
+ 114   1      lcd_cmd(0xc0);
+ 115   1      lcd_puts("   Right move.. ");
+ 116   1      ms_delay(800);
+ 117   1      lcd_cmd(0x01);
+C51 COMPILER V9.05   NOTE                                                                  08/03/2016 02:40:33 PAGE 3   
+
+ 118   1      ms_delay(200);
+ 119   1      lcd_cmd(0x80);
+ 120   1      lcd_puts(" Press 'D' for  ");
+ 121   1      lcd_cmd(0xc0);
+ 122   1      lcd_puts("   Left move   ");
+ 123   1      ms_delay(800);
+ 124   1      lcd_cmd(0x80);
+ 125   1      lcd_puts(" Press 'D' for  ");
+ 126   1      lcd_cmd(0xc0);
+ 127   1      lcd_puts("   Left move.   ");
+ 128   1      ms_delay(800);
+ 129   1      lcd_cmd(0x80);
+ 130   1      lcd_puts(" Press 'D' for  ");
+ 131   1      lcd_cmd(0xc0);
+ 132   1      lcd_puts("   Left move..  ");
+ 133   1      ms_delay(800);
+ 134   1      lcd_cmd(0x80);
+ 135   1      lcd_puts(" Press 'D' for  ");
+ 136   1      lcd_cmd(0xc0);
+ 137   1      lcd_puts("   Left move... ");
+ 138   1      ms_delay(800);*/
+ 139   1      lcd_cmd(0x01);
+ 140   1      while(1)
+ 141   1      {
+ 142   2      if(fwd==0)                                
+ 143   2      {
+ 144   3      /*lcd_cmd(0x80);
+ 145   3      lcd_puts(" Moving Forward ");
+ 146   3      lcd_cmd(0xc0);
+ 147   3      lcd_puts("->              "); */
+ 148   3      f1=on;
+ 149   3      f2=on;
+ 150   3      b1=off;
+ 151   3      b2=off;  
+ 152   3      ms_delay(30);/*
+ 153   3      lcd_cmd(0xc0);
+ 154   3      lcd_puts("     ->         ");
+ 155   3      ms_delay(50);
+ 156   3      lcd_cmd(0xc0);
+ 157   3      lcd_puts("         ->     ");
+ 158   3      ms_delay(50);
+ 159   3      lcd_cmd(0xc0);
+ 160   3      lcd_puts("              ->");
+ 161   3      ms_delay(50);                   */
+ 162   3      }
+ 163   2      else if(bwd==0)
+ 164   2      {                                                 /*
+ 165   3      lcd_cmd(0x80);
+ 166   3      lcd_puts("Moving Backward ");
+ 167   3      lcd_cmd(0xc0);
+ 168   3      lcd_puts("              <-");*/
+ 169   3      f1=off;
+ 170   3      f2=off;
+ 171   3      b1=on;
+ 172   3      b2=on;
+ 173   3      ms_delay(30);/*
+ 174   3      lcd_cmd(0xc0);
+ 175   3      lcd_puts("         <-     ");
+ 176   3      ms_delay(50);
+ 177   3      lcd_cmd(0xc0);
+ 178   3      lcd_puts("     <-         ");
+ 179   3      ms_delay(50);
+C51 COMPILER V9.05   NOTE                                                                  08/03/2016 02:40:33 PAGE 4   
+
+ 180   3      lcd_cmd(0xc0);
+ 181   3      lcd_puts("<-              "); */
+ 182   3      ms_delay(50);
+ 183   3      }                        
+ 184   2      else if(rt==0)
+ 185   2      {                          /*
+ 186   3      lcd_cmd(0x80);
+ 187   3      lcd_puts("  Moving Right  ");
+ 188   3      lcd_cmd(0xc0);
+ 189   3      lcd_puts("     <<@@>>     ");   */
+ 190   3      f1=on;
+ 191   3      f2=off;
+ 192   3      b1=off;
+ 193   3      b2=off;
+ 194   3      ms_delay(30); /*
+ 195   3      lcd_cmd(0xc0);
+ 196   3      lcd_puts("     << @  >>   ");
+ 197   3      ms_delay(50);
+ 198   3      lcd_cmd(0xc0);
+ 199   3      lcd_puts("     <<@@    >> ");
+ 200   3      ms_delay(50);
+ 201   3      lcd_cmd(0xc0);
+ 202   3      lcd_puts("     << @     >>");
+ 203   3      ms_delay(50);   */
+ 204   3      }
+ 205   2      else if(lt==0)
+ 206   2      {                                 /*
+ 207   3      lcd_cmd(0x80);    
+ 208   3      lcd_puts("  Moving Left.  ");
+ 209   3      lcd_cmd(0xc0);
+ 210   3      lcd_puts("     <<@@>>     "); */
+ 211   3      f1=off;
+ 212   3      f2=on;
+ 213   3      b1=off;
+ 214   3      b2=off;
+ 215   3      ms_delay(30);  /*
+ 216   3      lcd_cmd(0xc0);
+ 217   3      lcd_puts("    << @ >>     ");
+ 218   3      ms_delay(50);
+ 219   3      lcd_cmd(0xc0);
+ 220   3      lcd_puts(" <<    @@>>     ");
+ 221   3      ms_delay(50);
+ 222   3      lcd_cmd(0xc0);
+ 223   3      lcd_puts("<<     @ >>     ");
+ 224   3      ms_delay(50);    */
+ 225   3      }
+ 226   2      else
+ 227   2      {
+ 228   3      lcd_cmd(0x80);
+ 229   3      lcd_puts(" Let's START... ");
+ 230   3      lcd_cmd(0xc0);
+ 231   3      lcd_puts("                ");
+ 232   3      f1=off;
+ 233   3      f2=off; 
+ 234   3      b1=off;
+ 235   3      b2=off;
+ 236   3      while(fwd&&bwd&&rt&&lt==1);
+ 237   3      }
+ 238   2      }
+ 239   1      }
+
+
+C51 COMPILER V9.05   NOTE                                                                  08/03/2016 02:40:33 PAGE 5   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    307    ----
+   CONSTANT SIZE    =     34    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

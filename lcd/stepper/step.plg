@@ -1,0 +1,134 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+D:\aakash\lcd\stepper\step.uv2
+Project File Date:  07/28/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=215
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=215
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=237
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=237
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=236
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=236
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=236
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=237
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=234
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=239
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=237
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling note.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+Program Size: data=9.0 xdata=0 code=237
+creating hex file from "step"...
+"step" - 0 Error(s), 2 Warning(s).

@@ -1,0 +1,114 @@
+C51 COMPILER V9.05   NOTE                                                                  07/08/2016 06:24:43 PAGE 1   
+
+
+C51 COMPILER V9.05, COMPILATION OF MODULE NOTE
+OBJECT MODULE PLACED IN note.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE note.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<delay.h>
+   3          #define data P1
+   4          sbit s1=P3^0;
+   5          sbit s2=P3^1;
+   6          sbit s3=P3^2;
+   7          sbit RS=P3^5;
+   8          sbit RW=P3^6;
+   9          sbit EN=P3^7;
+  10          void lcd_cmd(unsigned char temp)
+  11          {
+  12   1      RS=0;
+  13   1      RW=0;
+  14   1      data=temp;
+  15   1      EN=1;
+  16   1      ms_delay(10);
+  17   1      EN=0;
+  18   1      }
+  19          void lcd_dat(unsigned char temp)
+  20          {
+  21   1      RS=1;
+  22   1      RW=0;
+  23   1      data=temp;
+  24   1      EN=1;
+  25   1      ms_delay(10);
+  26   1      EN=0;
+  27   1      }
+  28          void lcd_init()
+  29          {
+  30   1      lcd_cmd(0x38);
+  31   1      lcd_cmd(0x06);
+  32   1      lcd_cmd(0x0c);
+  33   1      lcd_cmd(0x01);
+  34   1      }
+  35          void lcd_puts(unsigned char *str)
+  36          {
+  37   1      while(*str!='\0')
+  38   1              {
+  39   2              lcd_dat(*str);
+  40   2              str++;
+  41   2              }
+  42   1      }
+  43          void main()
+  44          {
+  45   1      signed char i,s=0xc0;
+  46   1      //bit f;
+  47   1      P0=0;
+  48   1      P2=0xff;
+  49   1      lcd_init();
+  50   1      lcd_cmd(0x84);
+  51   1      lcd_puts("PASSWORD");
+  52   1      while(1)
+  53   1      { 
+  54   2         
+  55   2         while(s3==1)
+C51 COMPILER V9.05   NOTE                                                                  07/08/2016 06:24:43 PAGE 2   
+
+  56   2         {
+  57   3         if(s1==0)
+  58   3         {
+  59   4         i++;
+  60   4         while(s1==0);
+  61   4         if(i==10)
+  62   4         {
+  63   5         i=0;
+  64   5         }
+  65   4         }
+  66   3         if(s2==0)
+  67   3         {
+  68   4         i--;
+  69   4         while(s2==0);
+  70   4         if(i<0)
+  71   4         {
+  72   5         i=9;
+  73   5         }
+  74   4         }
+  75   3         lcd_cmd(s);
+  76   3         lcd_dat(i+48);
+  77   3         ms_delay(100);
+  78   3         }
+  79   2         if(s3==0)
+  80   2          {
+  81   3              i=0;
+  82   3          s++;
+  83   3              while(s3==0);
+  84   3              }
+  85   2              }
+  86   1              }
+  87          
+  88          
+  89             
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    237    ----
+   CONSTANT SIZE    =      9    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

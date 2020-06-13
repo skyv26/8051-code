@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\aakash\lcd\communication\ser.uvproj
+Project File Date:  <unknown>
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling rx.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?RX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?RX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PRINT?RX
+Program Size: data=13.0 xdata=0 code=490
+creating hex file from "ser"...
+"ser" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling rx.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?RX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?RX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PRINT?RX
+Program Size: data=13.0 xdata=0 code=490
+creating hex file from "ser"...
+"ser" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?RX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?RX
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PRINT?RX
+Program Size: data=13.0 xdata=0 code=490
+creating hex file from "ser"...
+"ser" - 0 Error(s), 3 Warning(s).

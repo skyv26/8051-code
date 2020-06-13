@@ -1,0 +1,294 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/19/2016  03:34:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE notepad.obj TO counting_switches
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  notepad.obj (NOTEPAD)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  counting_switches (NOTEPAD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+                    000AH     0016H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00B5H     UNIT         ?PR?MAIN?NOTEPAD
+            CODE    08B5H     002BH     UNIT         ?C?LIB_CODE
+            CODE    08E0H     002AH     UNIT         ?PR?_MS_DELAY?NOTEPAD
+            CODE    090AH     0022H     UNIT         ?PR?_SECDELAY?NOTEPAD
+            CODE    092CH     0014H     UNIT         ?PR?LCD_INIT?NOTEPAD
+            CODE    0940H     0013H     UNIT         ?PR?_LCD_PUTS?NOTEPAD
+            CODE    0953H     0012H     UNIT         ?PR?_LCD_CMD?NOTEPAD
+            CODE    0965H     0012H     UNIT         ?PR?_LCD_DAT?NOTEPAD
+            CODE    0977H     000DH     UNIT         ?PR?_DELAY?NOTEPAD
+            CODE    0984H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0990H     000AH     UNIT         ?CO?NOTEPAD
+
+
+
+OVERLAY MAP OF MODULE:   counting_switches (NOTEPAD)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?NOTEPAD
+
+?PR?MAIN?NOTEPAD               0020H.0  0000H.1    0008H    0002H
+  +--> ?PR?LCD_INIT?NOTEPAD
+  +--> ?PR?_LCD_CMD?NOTEPAD
+  +--> ?CO?NOTEPAD
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/19/2016  03:34:39  PAGE 2
+
+
+  +--> ?PR?_LCD_PUTS?NOTEPAD
+  +--> ?PR?_LCD_DAT?NOTEPAD
+  +--> ?PR?_MS_DELAY?NOTEPAD
+
+?PR?LCD_INIT?NOTEPAD           -----    -----      -----    -----
+  +--> ?PR?_LCD_CMD?NOTEPAD
+
+?PR?_LCD_PUTS?NOTEPAD          -----    -----      -----    -----
+  +--> ?PR?_LCD_DAT?NOTEPAD
+
+?PR?_MS_DELAY?NOTEPAD          -----    -----      -----    -----
+  +--> ?PR?_LCD_CMD?NOTEPAD
+  +--> ?PR?_LCD_DAT?NOTEPAD
+
+
+
+SYMBOL TABLE OF MODULE:  counting_switches (NOTEPAD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NOTEPAD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0977H         PUBLIC        _delay
+  B:00B0H.7       PUBLIC        EN
+  B:00B0H.0       PUBLIC        s1
+  B:00B0H.5       PUBLIC        RS
+  B:00B0H.1       PUBLIC        s2
+  B:00B0H.2       PUBLIC        s3
+  C:0800H         PUBLIC        main
+  B:00B0H.6       PUBLIC        RW
+  C:0953H         PUBLIC        _lcd_cmd
+  C:092CH         PUBLIC        lcd_init
+  C:0965H         PUBLIC        _lcd_dat
+  C:090AH         PUBLIC        _secdelay
+  C:08F1H         PUBLIC        _ms_delay
+  C:0940H         PUBLIC        _lcd_puts
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        x
+  C:0977H         LINE#         3
+  C:0977H         LINE#         4
+  C:0977H         LINE#         5
+  C:097BH         LINE#         6
+  C:097BH         LINE#         7
+  C:097CH         LINE#         8
+  C:0981H         LINE#         9
+  C:0983H         LINE#         10
+  -------         ENDPROC       _DELAY
+  C:08E0H         SYMBOL        L?0048
+  -------         PROC          L?0047
+  -------         ENDPROC       L?0047
+  C:08E0H         SYMBOL        L?0048
+  -------         PROC          _MS_DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/19/2016  03:34:39  PAGE 3
+
+
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:08F1H         LINE#         13
+  C:08F1H         LINE#         14
+  C:08F1H         LINE#         16
+  C:08F8H         LINE#         17
+  C:0901H         LINE#         18
+  C:0901H         LINE#         19
+  C:0902H         LINE#         20
+  C:0909H         LINE#         21
+  -------         ENDPROC       _MS_DELAY
+  -------         PROC          _SECDELAY
+  D:0006H         SYMBOL        num
+  -------         DO            
+  D:0002H         SYMBOL        f
+  D:0082H         SYMBOL        m
+  -------         ENDDO         
+  C:090AH         LINE#         23
+  C:090AH         LINE#         24
+  C:090AH         LINE#         26
+  C:0915H         LINE#         27
+  C:0921H         LINE#         28
+  C:0921H         LINE#         29
+  C:0928H         LINE#         30
+  C:092BH         LINE#         31
+  -------         ENDPROC       _SECDELAY
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        temp
+  C:0953H         LINE#         10
+  C:0953H         LINE#         11
+  C:0953H         LINE#         12
+  C:0955H         LINE#         13
+  C:0957H         LINE#         14
+  C:0959H         LINE#         15
+  C:095BH         LINE#         16
+  C:0962H         LINE#         17
+  C:0964H         LINE#         18
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DAT
+  D:0007H         SYMBOL        temp
+  C:0965H         LINE#         19
+  C:0965H         LINE#         20
+  C:0965H         LINE#         21
+  C:0967H         LINE#         22
+  C:0969H         LINE#         23
+  C:096BH         LINE#         24
+  C:096DH         LINE#         25
+  C:0974H         LINE#         26
+  C:0976H         LINE#         27
+  -------         ENDPROC       _LCD_DAT
+  -------         PROC          LCD_INIT
+  C:092CH         LINE#         28
+  C:092CH         LINE#         29
+  C:092CH         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/19/2016  03:34:39  PAGE 4
+
+
+  C:0931H         LINE#         31
+  C:0936H         LINE#         32
+  C:093BH         LINE#         33
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_PUTS
+  D:0001H         SYMBOL        str
+  C:0940H         LINE#         35
+  C:0940H         LINE#         36
+  C:0940H         LINE#         37
+  C:0946H         LINE#         38
+  C:0946H         LINE#         39
+  C:0949H         LINE#         40
+  C:0950H         LINE#         41
+  C:0952H         LINE#         42
+  -------         ENDPROC       _LCD_PUTS
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0009H         SYMBOL        n
+  B:0020H.0       SYMBOL        f
+  -------         ENDDO         
+  C:0800H         LINE#         43
+  C:0800H         LINE#         44
+  C:0800H         LINE#         47
+  C:0803H         LINE#         48
+  C:0805H         LINE#         49
+  C:0808H         LINE#         50
+  C:080DH         LINE#         51
+  C:0816H         LINE#         52
+  C:0816H         LINE#         53
+  C:0816H         LINE#         54
+  C:081BH         LINE#         55
+  C:0823H         LINE#         56
+  C:082AH         LINE#         57
+  C:082DH         LINE#         58
+  C:082DH         LINE#         59
+  C:082FH         LINE#         60
+  C:0832H         LINE#         61
+  C:0837H         LINE#         62
+  C:0837H         LINE#         63
+  C:083AH         LINE#         64
+  C:083AH         LINE#         65
+  C:083CH         LINE#         66
+  C:083CH         LINE#         67
+  C:083FH         LINE#         68
+  C:083FH         LINE#         69
+  C:0841H         LINE#         70
+  C:0844H         LINE#         71
+  C:0850H         LINE#         72
+  C:0850H         LINE#         73
+  C:0853H         LINE#         74
+  C:0853H         LINE#         75
+  C:0855H         LINE#         76
+  C:0855H         LINE#         77
+  C:0858H         LINE#         78
+  C:0858H         LINE#         79
+  C:085BH         LINE#         80
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/19/2016  03:34:39  PAGE 5
+
+
+  C:085BH         LINE#         81
+  C:0867H         LINE#         82
+  C:0867H         LINE#         83
+  C:0867H         LINE#         84
+  C:0867H         LINE#         85
+  C:086AH         LINE#         86
+  C:086EH         LINE#         87
+  C:087EH         LINE#         88
+  C:087EH         LINE#         89
+  C:087EH         LINE#         90
+  C:087EH         LINE#         91
+  C:0881H         LINE#         93
+  C:0885H         LINE#         94
+  C:0885H         LINE#         95
+  C:0888H         LINE#         96
+  C:0888H         LINE#         97
+  C:0894H         LINE#         98
+  C:0894H         LINE#         99
+  C:0894H         LINE#         100
+  C:0894H         LINE#         101
+  C:0897H         LINE#         102
+  C:089BH         LINE#         104
+  C:08AEH         LINE#         105
+  C:08AEH         LINE#         106
+  C:08AEH         LINE#         107
+  C:08AEH         LINE#         108
+  C:08B1H         LINE#         110
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        NOTEPAD
+
+  -------         MODULE        ?C?CLDPTR
+  C:08B5H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?IMUL
+  C:08CEH         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTEPAD
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTEPAD
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0163H BYTE (17%) *
+******************************************************************************
+
+Program Size: data=11.1 xdata=0 code=413
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

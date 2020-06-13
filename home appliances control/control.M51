@@ -1,0 +1,178 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/06/2016  02:15:25  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE note.obj TO control
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  note.obj (NOTE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  control (NOTE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     002AH     UNIT         ?PR?MAIN?NOTE
+            CODE    082AH     0022H     UNIT         ?PR?_SECDELAY?NOTE
+            CODE    084CH     001DH     UNIT         ?PR?_MS_DELAY?NOTE
+            CODE    0869H     0012H     UNIT         ?C?LIB_CODE
+            CODE    087BH     000DH     UNIT         ?PR?_DELAY?NOTE
+            CODE    0888H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   control (NOTE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?NOTE
+
+?PR?MAIN?NOTE
+  +--> ?PR?_MS_DELAY?NOTE
+
+
+
+SYMBOL TABLE OF MODULE:  control (NOTE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NOTE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/06/2016  02:15:25  PAGE 2
+
+
+  B:00A0H.0       PUBLIC        R1
+  D:00B0H         PUBLIC        P3
+  B:00A0H.1       PUBLIC        R2
+  B:00A0H.2       PUBLIC        R3
+  B:00A0H.3       PUBLIC        R4
+  C:087BH         PUBLIC        _delay
+  C:0800H         PUBLIC        main
+  B:0090H.0       PUBLIC        led_1
+  B:0090H.2       PUBLIC        led_2
+  B:0090H.4       PUBLIC        led_3
+  B:0090H.6       PUBLIC        led_4
+  C:082AH         PUBLIC        _secdelay
+  C:0850H         PUBLIC        _ms_delay
+  B:00B0H.3       PUBLIC        a
+  B:00B0H.4       PUBLIC        b
+  B:00B0H.5       PUBLIC        c
+  B:00B0H.6       PUBLIC        d
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        x
+  C:087BH         LINE#         3
+  C:087BH         LINE#         4
+  C:087BH         LINE#         5
+  C:087FH         LINE#         6
+  C:087FH         LINE#         7
+  C:0880H         LINE#         8
+  C:0885H         LINE#         9
+  C:0887H         LINE#         10
+  -------         ENDPROC       _DELAY
+  C:084CH         SYMBOL        L?0022
+  -------         PROC          L?0021
+  -------         ENDPROC       L?0021
+  C:084CH         SYMBOL        L?0022
+  -------         PROC          _MS_DELAY
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0850H         LINE#         13
+  C:0850H         LINE#         14
+  C:0850H         LINE#         16
+  C:0857H         LINE#         17
+  C:0860H         LINE#         18
+  C:0860H         LINE#         19
+  C:0861H         LINE#         20
+  C:0868H         LINE#         21
+  -------         ENDPROC       _MS_DELAY
+  -------         PROC          _SECDELAY
+  D:0006H         SYMBOL        num
+  -------         DO            
+  D:0002H         SYMBOL        f
+  D:0082H         SYMBOL        m
+  -------         ENDDO         
+  C:082AH         LINE#         23
+  C:082AH         LINE#         24
+  C:082AH         LINE#         26
+  C:0835H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/06/2016  02:15:25  PAGE 3
+
+
+  C:0841H         LINE#         28
+  C:0841H         LINE#         29
+  C:0848H         LINE#         30
+  C:084BH         LINE#         31
+  -------         ENDPROC       _SECDELAY
+  -------         PROC          MAIN
+  C:0800H         LINE#         15
+  C:0800H         LINE#         16
+  C:0800H         LINE#         17
+  C:0800H         LINE#         18
+  C:0800H         LINE#         19
+  C:0803H         LINE#         20
+  C:0803H         LINE#         21
+  C:0805H         LINE#         22
+  C:0807H         LINE#         23
+  C:080AH         LINE#         24
+  C:080AH         LINE#         25
+  C:080DH         LINE#         26
+  C:080DH         LINE#         27
+  C:080FH         LINE#         28
+  C:0811H         LINE#         29
+  C:0814H         LINE#         30
+  C:0814H         LINE#         31
+  C:0817H         LINE#         32
+  C:0817H         LINE#         33
+  C:0819H         LINE#         34
+  C:081BH         LINE#         35
+  C:081EH         LINE#         36
+  C:081EH         LINE#         37
+  C:0821H         LINE#         38
+  C:0821H         LINE#         39
+  C:0823H         LINE#         40
+  C:0825H         LINE#         41
+  C:0828H         LINE#         42
+  C:0828H         LINE#         43
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        NOTE
+
+  -------         MODULE        ?C?IMUL
+  C:0869H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0076H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=151
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

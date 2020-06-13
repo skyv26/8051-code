@@ -1,0 +1,308 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/18/2016  05:56:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE note.obj TO adc
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  note.obj (NOTE)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?CASTF)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LNEG)
+
+
+LINK MAP OF MODULE:  adc (NOTE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0198H     UNIT         ?C?LIB_CODE
+            CODE    0998H     004FH     UNIT         ?PR?MAIN?NOTE
+            CODE    09E7H     002FH     UNIT         ?PR?_LCD_PRINT?NOTE
+            CODE    0A16H     0023H     UNIT         ?PR?_MS_DELAY?NOTE
+            CODE    0A39H     0022H     UNIT         ?PR?_SECDELAY?NOTE
+            CODE    0A5BH     001AH     UNIT         ?PR?ADC?NOTE
+            CODE    0A75H     0014H     UNIT         ?PR?LCD_INIT?NOTE
+            CODE    0A89H     0013H     UNIT         ?PR?_LCD_PUTS?NOTE
+            CODE    0A9CH     0013H     UNIT         ?CO?NOTE
+            CODE    0AAFH     000DH     UNIT         ?PR?_DELAY?NOTE
+            CODE    0ABCH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0AC8H     0008H     UNIT         ?PR?_LCD_CMD?NOTE
+            CODE    0AD0H     0008H     UNIT         ?PR?_LCD_DAT?NOTE
+
+
+
+OVERLAY MAP OF MODULE:   adc (NOTE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?NOTE
+
+?PR?MAIN?NOTE
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/18/2016  05:56:21  PAGE 2
+
+
+  +--> ?PR?LCD_INIT?NOTE
+  +--> ?PR?_LCD_CMD?NOTE
+  +--> ?CO?NOTE
+  +--> ?PR?_LCD_PUTS?NOTE
+  +--> ?PR?ADC?NOTE
+  +--> ?PR?_LCD_PRINT?NOTE
+  +--> ?PR?_MS_DELAY?NOTE
+
+?PR?LCD_INIT?NOTE
+  +--> ?PR?_LCD_CMD?NOTE
+
+?PR?_LCD_CMD?NOTE
+  +--> ?PR?_MS_DELAY?NOTE
+
+?PR?_LCD_PUTS?NOTE
+  +--> ?PR?_LCD_DAT?NOTE
+
+?PR?_LCD_DAT?NOTE
+  +--> ?PR?_MS_DELAY?NOTE
+
+?PR?ADC?NOTE
+  +--> ?PR?_MS_DELAY?NOTE
+
+?PR?_LCD_PRINT?NOTE
+  +--> ?PR?_LCD_DAT?NOTE
+
+
+
+SYMBOL TABLE OF MODULE:  adc (NOTE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NOTE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0AAFH         PUBLIC        _delay
+  B:00B0H.7       PUBLIC        EN
+  B:00B0H.3       PUBLIC        SC
+  B:00B0H.5       PUBLIC        RS
+  C:0998H         PUBLIC        main
+  B:00B0H.6       PUBLIC        RW
+  C:09E7H         PUBLIC        _lcd_print
+  C:0A5BH         PUBLIC        ADC
+  C:0AC8H         PUBLIC        _lcd_cmd
+  C:0A75H         PUBLIC        lcd_init
+  C:0AD0H         PUBLIC        _lcd_dat
+  C:0A39H         PUBLIC        _secdelay
+  C:0A20H         PUBLIC        _ms_delay
+  C:0A89H         PUBLIC        _lcd_puts
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        x
+  C:0AAFH         LINE#         3
+  C:0AAFH         LINE#         4
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/18/2016  05:56:21  PAGE 3
+
+
+  C:0AAFH         LINE#         5
+  C:0AB3H         LINE#         6
+  C:0AB3H         LINE#         7
+  C:0AB4H         LINE#         8
+  C:0AB9H         LINE#         9
+  C:0ABBH         LINE#         10
+  -------         ENDPROC       _DELAY
+  C:0A1CH         SYMBOL        L?0026
+  -------         PROC          L?0025
+  -------         ENDPROC       L?0025
+  C:0A1CH         SYMBOL        L?0026
+  -------         PROC          _MS_DELAY
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0A20H         LINE#         13
+  C:0A20H         LINE#         14
+  C:0A20H         LINE#         16
+  C:0A27H         LINE#         17
+  C:0A30H         LINE#         18
+  C:0A30H         LINE#         19
+  C:0A31H         LINE#         20
+  C:0A38H         LINE#         21
+  -------         ENDPROC       _MS_DELAY
+  -------         PROC          _SECDELAY
+  D:0006H         SYMBOL        num
+  -------         DO            
+  D:0002H         SYMBOL        f
+  D:0082H         SYMBOL        m
+  -------         ENDDO         
+  C:0A39H         LINE#         23
+  C:0A39H         LINE#         24
+  C:0A39H         LINE#         26
+  C:0A44H         LINE#         27
+  C:0A50H         LINE#         28
+  C:0A50H         LINE#         29
+  C:0A57H         LINE#         30
+  C:0A5AH         LINE#         31
+  -------         ENDPROC       _SECDELAY
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        temp
+  C:0AC8H         LINE#         5
+  C:0AC8H         LINE#         6
+  C:0AC8H         LINE#         7
+  C:0ACAH         LINE#         8
+  C:0ACAH         LINE#         9
+  C:0ACAH         LINE#         10
+  C:0ACAH         LINE#         11
+  C:0ACDH         LINE#         12
+  C:0ACFH         LINE#         13
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DAT
+  D:0007H         SYMBOL        temp
+  C:0AD0H         LINE#         14
+  C:0AD0H         LINE#         15
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/18/2016  05:56:21  PAGE 4
+
+
+  C:0AD0H         LINE#         16
+  C:0AD2H         LINE#         17
+  C:0AD2H         LINE#         18
+  C:0AD2H         LINE#         19
+  C:0AD2H         LINE#         20
+  C:0AD5H         LINE#         21
+  C:0AD7H         LINE#         22
+  -------         ENDPROC       _LCD_DAT
+  -------         PROC          LCD_INIT
+  C:0A75H         LINE#         23
+  C:0A75H         LINE#         24
+  C:0A75H         LINE#         25
+  C:0A7AH         LINE#         26
+  C:0A7FH         LINE#         27
+  C:0A84H         LINE#         28
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_PUTS
+  D:0001H         SYMBOL        str
+  C:0A89H         LINE#         30
+  C:0A89H         LINE#         31
+  C:0A89H         LINE#         32
+  C:0A8FH         LINE#         33
+  C:0A8FH         LINE#         34
+  C:0A92H         LINE#         35
+  C:0A99H         LINE#         36
+  C:0A9BH         LINE#         37
+  -------         ENDPROC       _LCD_PUTS
+  -------         PROC          _LCD_PRINT
+  D:0007H         SYMBOL        V
+  -------         DO            
+  D:0006H         SYMBOL        H
+  D:0003H         SYMBOL        T
+  D:0002H         SYMBOL        O
+  -------         ENDDO         
+  C:09E7H         LINE#         38
+  C:09E7H         LINE#         39
+  C:09E7H         LINE#         41
+  C:09EDH         LINE#         42
+  C:09F4H         LINE#         43
+  C:09FAH         LINE#         44
+  C:0A01H         LINE#         45
+  C:0A08H         LINE#         46
+  C:0A0FH         LINE#         47
+  -------         ENDPROC       _LCD_PRINT
+  -------         PROC          ADC
+  C:0A5BH         LINE#         10
+  C:0A5BH         LINE#         11
+  C:0A5BH         LINE#         12
+  C:0A5DH         LINE#         13
+  C:0A60H         LINE#         14
+  C:0A62H         LINE#         15
+  C:0A69H         LINE#         16
+  C:0A6BH         LINE#         17
+  C:0A72H         LINE#         18
+  C:0A74H         LINE#         19
+  -------         ENDPROC       ADC
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/18/2016  05:56:21  PAGE 5
+
+
+  -------         DO            
+  D:0001H         SYMBOL        Q
+  -------         ENDDO         
+  C:0998H         LINE#         21
+  C:0998H         LINE#         22
+  C:0998H         LINE#         25
+  C:099BH         LINE#         26
+  C:099EH         LINE#         27
+  C:09A3H         LINE#         28
+  C:09A8H         LINE#         29
+  C:09B1H         LINE#         30
+  C:09B6H         LINE#         31
+  C:09BDH         LINE#         32
+  C:09BDH         LINE#         33
+  C:09BDH         LINE#         34
+  C:09C2H         LINE#         35
+  C:09C7H         LINE#         36
+  C:09DBH         LINE#         37
+  C:09DEH         LINE#         38
+  C:09E5H         LINE#         39
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        NOTE
+
+  -------         MODULE        ?C?FPDIV
+  C:0803H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:08AAH         PUBLIC        ?C?FCASTC
+  C:08A5H         PUBLIC        ?C?FCASTI
+  C:08A0H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:08DEH         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:095FH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?IMUL
+  C:0978H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?LNEG
+  C:098AH         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NOTE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SECDELAY?NOTE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0134H BYTE (15%) *
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/18/2016  05:56:21  PAGE 6
+
+
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=731
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
